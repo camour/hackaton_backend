@@ -26,9 +26,11 @@ exports.subscribeToMN = (containerId) => {
         }
     })
     .then(result => {
+        console.log('MN SUBSCRIPTION OK : ');
         console.log(result);
     })
     .catch(error => {
+        console.log('MN SUBSCRIPTION ERROR: ');
         console.log(error);
     });
 }
