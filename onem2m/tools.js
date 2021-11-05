@@ -1,10 +1,12 @@
 const fetch = require('cross-fetch');
 
-exports.subscribeToMN = (containerId) => {
+exports.subscribeToMN = (identifiers, containerId) => {
+    console.log('identifiers :');
+    console.log(identifiers);
     fetch('http://localhost:8282/~/mn-cse/'+containerId, {
         method: 'POST',
         headers: {
-            'X-M2M-Origin': 'admin:admin',
+            'X-M2M-Origin': identifiers.login+':'+identifiers.password,
             'Content-Type': 'application/json;ty=23',
             'Accept': 'application/json'
         },
@@ -15,7 +17,7 @@ exports.subscribeToMN = (containerId) => {
             
                   "nct": 2,
             
-                  "rn": "SUB_DATA_CHAMBRE_1"
+                  "rn": "SUB_DATA_CHAMBRE_1_"+identifiers.login
             
                 }            
         })
