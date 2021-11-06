@@ -8,8 +8,29 @@ const loginsArray = [{
         },
         aeArray: [
                 {
+                    aeName: 'ROOM 1',
                     aeId: 'CAE167174759',
-                    containersArray: ['cnt-379667708', 'cnt-434134342']
+                    containersArray: [{
+                        containerName: 'TEMPERATURE',
+                        containerId: 'cnt-586966070'
+                    }, 
+                    {
+                        containerName: 'ACCELEROMETER',
+                        containerId: 'cnt-434134342'
+                    }]
+                },
+                {
+                    aeName: 'ROOM 2',
+                    aeId: 'CAE76730074',
+                    containersArray: [
+                        {
+                            containerName: 'TEMPERATURE',
+                            containerId: 'cnt-370117753',
+                        }, 
+                        {
+                            containerName: 'ACCELEROMETER',
+                            containerId: 'cnt-378867500'
+                        }]
                 }
         ]
     }, 
@@ -20,8 +41,17 @@ const loginsArray = [{
         },
         aeArray: [
             {
+                aeName: 'ROOM 2',
                 aeId: 'CAE76730074',
-                containersArray: ['cnt-370117753', 'cnt-378867500']
+                containersArray: [
+                    {
+                        containerName: 'TEMPERATURE',
+                        containerId: 'cnt-370117753',
+                    }, 
+                    {
+                        containerName: 'ACCELEROMETER',
+                        containerId: 'cnt-378867500'
+                    }]
             }
         ]      
 }];
@@ -51,6 +81,7 @@ exports.handleWebClientSubscription = (request, response, next) => {
 };
 
 exports.sendNotificationToWebClient = (request, response, next) => {
+    console.log('hereeeeeee');
    if(request.body['m2m:sgn']['m2m:vrq']){
         console.log('REQUEST BODY TEST PING FROM MN NODE');
         console.log(request.body);
@@ -59,7 +90,7 @@ exports.sendNotificationToWebClient = (request, response, next) => {
         console.log('REQUEST BODY NOTIFICATION CONTENT FROM MN NODE');
         console.log(request.body['m2m:sgn']['m2m:nev']['m2m:rep']);
         response.status(200).json({message: 'notification received'});
-        push.sendNotification(subscriptions[0].push, 'test');
+        push.sendNotification(subscriptions[0].push, JSON.stringify(request.body['m2m:sgn']['m2m:nev']['m2m:rep']['m2m:cin']));
    }
 };
 
