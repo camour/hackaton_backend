@@ -9,27 +9,27 @@ const loginsArray = [{
         aeArray: [
                 {
                     aeName: 'ROOM 1',
-                    aeId: 'CAE167174759',
+                    aeId: 'CAE390460321',
                     containersArray: [{
                         containerName: 'TEMPERATURE',
-                        containerId: 'cnt-586966070'
+                        containerId: 'cnt-265931033'
                     }, 
                     {
                         containerName: 'ACCELEROMETER',
-                        containerId: 'cnt-434134342'
+                        containerId: 'cnt-141308419'
                     }]
                 },
                 {
                     aeName: 'ROOM 2',
-                    aeId: 'CAE76730074',
+                    aeId: 'CAE210563317',
                     containersArray: [
                         {
                             containerName: 'TEMPERATURE',
-                            containerId: 'cnt-370117753',
+                            containerId: 'cnt-539698496',
                         }, 
                         {
                             containerName: 'ACCELEROMETER',
-                            containerId: 'cnt-378867500'
+                            containerId: 'cnt-929627142'
                         }]
                 }
         ]
@@ -81,7 +81,6 @@ exports.handleWebClientSubscription = (request, response, next) => {
 };
 
 exports.sendNotificationToWebClient = (request, response, next) => {
-    console.log('hereeeeeee');
    if(request.body['m2m:sgn']['m2m:vrq']){
         console.log('REQUEST BODY TEST PING FROM MN NODE');
         console.log(request.body);
