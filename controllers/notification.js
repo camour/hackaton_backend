@@ -9,27 +9,27 @@ const loginsArray = [{
         aeArray: [
                 {
                     aeName: 'ROOM 1',
-                    aeId: 'CAE390460321',
+                    aeId: 'CAE167174759',
                     containersArray: [{
                         containerName: 'TEMPERATURE',
-                        containerId: 'cnt-265931033'
+                        containerId: 'cnt-586966070'
                     }, 
                     {
                         containerName: 'ACCELEROMETER',
-                        containerId: 'cnt-141308419'
+                        containerId: 'cnt-434134342'
                     }]
                 },
                 {
                     aeName: 'ROOM 2',
-                    aeId: 'CAE210563317',
+                    aeId: 'CAE76730074',
                     containersArray: [
                         {
                             containerName: 'TEMPERATURE',
-                            containerId: 'cnt-539698496',
+                            containerId: 'cnt-370117753',
                         }, 
                         {
                             containerName: 'ACCELEROMETER',
-                            containerId: 'cnt-929627142'
+                            containerId: 'cnt-378867500'
                         }]
                 }
         ]
