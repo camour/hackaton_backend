@@ -1,7 +1,8 @@
 const fetch = require('cross-fetch');
+require('dotenv').config();
 
 exports.subscribeToMN = (identifiers, containerId) => {
-    fetch('http://localhost:8080/~/mn-cse/'+containerId, {
+    fetch(process.env.MN_NODE+containerId, {
         method: 'POST',
         headers: {
             'X-M2M-Origin': identifiers.login + ':' + identifiers.password,
@@ -11,7 +12,7 @@ exports.subscribeToMN = (identifiers, containerId) => {
         body: JSON.stringify({
                 "m2m:sub": {
             
-                  "nu": "http://localhost:3000/onem2m",
+                  "nu": process.env.MY_NODE + "onem2m",
             
                   "nct": 2,
             

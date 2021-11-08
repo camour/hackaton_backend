@@ -1,4 +1,5 @@
 let push = require('web-push');
+require('dotenv').config();
 const subscriptions = {};
 const tools = require('../onem2m/tools');
 const loginsArray = [{
@@ -60,7 +61,7 @@ const vapidKeys = {
     publicKey: 'BIp2B5Iwb-uy3RLwo8E5RJwRW2CYv16g5ip3Y4zoGr9fHEGl4MAQbkkU_1wGyJS6ZzZPxe3KjgPSAvPs__mwoRM',
     privateKey: 'T_khU9BUNLDt7x-DKxBi8gG09g_j_L68qcTKDapLLSQ'
 };
-push.setVapidDetails('http://localhost:8008', vapidKeys.publicKey, vapidKeys.privateKey);
+push.setVapidDetails(process.env.WEB_USER_APPLICATION_NODE, vapidKeys.publicKey, vapidKeys.privateKey);
 
 exports.login = (request, response, next) => {
     let element = null;
