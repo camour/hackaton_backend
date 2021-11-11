@@ -2,6 +2,11 @@ const fetch = require('cross-fetch');
 require('dotenv').config();
 
 exports.subscribeToMN = (identifiers, containerId) => {
+    console.log("sending subscribtion request to MN node");
+    console.log(identifiers);
+    console.log(containerId);
+    console.log('nu');
+    console.log(process.env.SERVER_NODE + "onem2m");
     fetch(process.env.GATEWAY_NODE+containerId, {
         method: 'POST',
         headers: {
@@ -16,7 +21,7 @@ exports.subscribeToMN = (identifiers, containerId) => {
             
                   "nct": 2,
             
-                  "rn": "SUB_DATA_CHAMBRE_1_"+identifiers.login
+                  "rn": "SUB_DATA_ROOM_"+identifiers.login
             
                 }            
         })

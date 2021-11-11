@@ -14,27 +14,27 @@ const loginsArray = [{
         aeArray: [
                 {
                     aeName: 'ROOM 1',
-                    aeId: 'CAE167174759',
+                    aeId: 'CAE682160162',
                     containersArray: [{
                         containerName: 'TEMPERATURE',
-                        containerId: 'cnt-586966070'
+                        containerId: 'cnt-516769069'
                     }, 
                     {
                         containerName: 'ACCELEROMETER',
-                        containerId: 'cnt-434134342'
+                        containerId: 'cnt-374635274'
                     }]
                 },
                 {
                     aeName: 'ROOM 2',
-                    aeId: 'CAE76730074',
+                    aeId: 'CAE759379644',
                     containersArray: [
                         {
                             containerName: 'TEMPERATURE',
-                            containerId: 'cnt-370117753',
+                            containerId: 'cnt-365157751',
                         }, 
                         {
                             containerName: 'ACCELEROMETER',
-                            containerId: 'cnt-378867500'
+                            containerId: 'cnt-116386553'
                         }]
                 }
         ]
@@ -48,15 +48,15 @@ const loginsArray = [{
         aeArray: [
             {
                 aeName: 'ROOM 2',
-                aeId: 'CAE76730074',
+                aeId: 'CAE759379644',
                 containersArray: [
                     {
                         containerName: 'TEMPERATURE',
-                        containerId: 'cnt-370117753',
+                        containerId: 'cnt-365157751',
                     }, 
                     {
                         containerName: 'ACCELEROMETER',
-                        containerId: 'cnt-378867500'
+                        containerId: 'cnt-116386553'
                     }]
             }
         ]      
@@ -85,9 +85,15 @@ exports.handleWebClientSubscription = (request, response, next) => {
 };
 
 exports.sendNotificationToWebClient = (request, response, next) => {
+    console.log('in function sendNotificationToWebCleint');
+    console.log(request.body);
    if(request.body['m2m:sgn']['m2m:vrq']){
+        console.log('ack sub from MN NODE');
+        console.log(request.body['m2m:sgn']);
         response.status(200).json({message: 'poa'});
    }else if(request.body['m2m:sgn']['m2m:nev']){
+       console.log('notification from MN Node');
+        console.log(request.body['m2m:sgn']['m2m:nev']);
         //we respond to the gateway node to confirm we received its new data
         response.status(200).json({message: 'notification received'});
         // now before forwarding this new data to our web client, we have to make sure

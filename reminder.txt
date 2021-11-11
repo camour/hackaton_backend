@@ -1,0 +1,56 @@
+const loginsArray = [{
+        identifiers: {
+            login: 'admin',
+            password: 'admin'
+        },
+        logged: false,
+        aeArray: [
+                {
+                    aeName: 'ROOM 1',
+                    aeId: 'CAE616029411',
+                    containersArray: [{
+                        containerName: 'TEMPERATURE',
+                        containerId: 'cnt-623708435'
+                    }, 
+                    {
+                        containerName: 'ACCELEROMETER',
+                        containerId: 'cnt-800110039'
+                    }]
+                },
+                {
+                    aeName: 'ROOM 2',
+                    aeId: 'CAE23972043',
+                    containersArray: [
+                        {
+                            containerName: 'TEMPERATURE',
+                            containerId: 'cnt-417473137',
+                        }, 
+                        {
+                            containerName: 'ACCELEROMETER',
+                            containerId: 'cnt-293388807'
+                        }]
+                }
+        ]
+    }, 
+    {
+        identifiers: {
+            login: 'test',
+            password: 'test'
+        },
+        logged: false,
+        aeArray: [
+            {
+                aeName: 'ROOM 2',
+                aeId: 'CAE23972043',
+                containersArray: [
+                    {
+                        containerName: 'TEMPERATURE',
+                        containerId: 'cnt-417473137',
+                    }, 
+                    {
+                        containerName: 'ACCELEROMETER',
+                        containerId: 'cnt-293388807'
+                    }]
+            }
+        ]      
+}];

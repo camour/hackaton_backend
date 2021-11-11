@@ -8,6 +8,6 @@ router.post('/logout', notificationController.logout);
 router.post('/subscription', notificationController.handleWebClientSubscription);
 
 //when our gateway node wants to get us notified about a new data
-router.post('/onem2m', notificationController.sendNotificationToWebClient);
+router.use('/onem2m', notificationController.sendNotificationToWebClient);
 
 module.exports = router;
