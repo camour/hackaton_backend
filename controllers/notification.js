@@ -62,7 +62,6 @@ const loginsArray = [{
         ]      
 }];
 
-push.setVapidDetails(process.env.WEB_USER_APPLICATION_NODE, process.env.VAPIDKEYS_PUBLICKEY, process.env.VAPIDKEYS_PRIVATEKEY);
 
 exports.login = (request, response, next) => {
     if(element = loginsArray.find(element => ( (element.identifiers.login === request.body.login) && (element.identifiers.password === request.body.password)))){
@@ -71,6 +70,7 @@ exports.login = (request, response, next) => {
             aeArray: element.aeArray
         });
         element.logged = true;
+        push.setVapidDetails('http://'+request.ip.split(':')[3], process.env.VAPIDKEYS_PUBLICKEY, process.env.VAPIDKEYS_PRIVATEKEY);
     }else{
         response.status(401).json({message: 'invalid IDs'});
     }

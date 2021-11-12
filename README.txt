@@ -27,11 +27,11 @@ Project installation :
 Project configuration :
 - Let's keep in mind we have 4 nodes for the whole hackathon project: Sensors, Gateway (Middle Node), Infrastructure Node, User Web application
 - first go to the ".env" file located at the repository of this backend project and edit the following lines : 
-	- "WEB_USER_APPLICATION_NODE=http://localhost:80" => replace the "localhost:80" part ONLY by the URL of where the user web app is displayed at
 	- "GATEWAY_NODE=http://localhost:8080/~/mn-cse/" => replace ONLY the "localhost" part by the IP address of where your IN-CSE runs at
 	- "SERVER_NODE=http://localhost:3000/" => replace the "localhost" part by the IP address of where your server node will be running at
 
 ------------------------------------------------------------------------------
 
 Project launch :
-- on a terminal, under "hackathon-backend" repo, run the following line command : nodemon server.js
+- on a terminal, under "hackathon-backend" directory, run the following line command : "nodemon server.js" or "node server.js"
+- normally on your terminal, you should see "listening on port 3000"
