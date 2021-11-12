@@ -17,11 +17,11 @@ const loginsArray = [{
                     aeId: 'CAE682160162',
                     containersArray: [{
                         containerName: 'TEMPERATURE',
-                        containerId: 'cnt-516769069'
+                        containerId: 'cnt-932198662'
                     }, 
                     {
                         containerName: 'ACCELEROMETER',
-                        containerId: 'cnt-374635274'
+                        containerId: 'cnt-960917153'
                     }]
                 },
                 {

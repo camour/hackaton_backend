@@ -1,11 +1,15 @@
 Purpose:
 This repository is part of hackathon project and implements a part of the Infrastructure Node of the OMEM2M architecture.
 Let's keep in mind we have 4 nodes for the whole hackathon project: Sensors, Gateway (Middle Node), Infrastructure Node, User Web application
-To be more precised, the Infrastructure Node hosts 2 main softwares : the IN-CSE eclipse software AND a node server to handle and send notifications to the user web app.
-This repository is the code for the node server.
-The goal of this node server is to forward patients'datas (acceleration and temperature) from the gateway to the web application running on chrome navigator
-Thus we can consider this node server as an interface between our Middle Node (raspberry pi 3) and our user web application. Everytime the Middle Node receives data
-from the sensors, the Middle Node sends this data to our node server. The node server then sends a notification (that contains data) to the user web app.
+Here we will focus on the the Infrastructure Node part. To be more precised, the Infrastructure Node hosts 2 main softwares : 
+		- the IN-CSE eclipse software 
+			AND 
+		- a Node JS server to handle subscription and send notifications to the user web app as well as the login/logout part of the user web app
+
+This repository is the code for this Node JS server.
+The goal of this Node JS server is to forward patients'datas (acceleration and temperature) from the gateway to the web application that is running on the Chrome navigator
+Thus we can consider this Node JS server as an interface between our Middle Node (raspberry pi 3) and our user web application. Everytime the Middle Node receives data
+from the sensors, the Middle Node sends this data to our Node JS Server. The Node JS server then sends a notification (that contains data) to the user web app.
 
 
 Project installation : 
