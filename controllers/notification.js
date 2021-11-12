@@ -101,16 +101,18 @@ exports.sendNotificationToWebClient = (request, response, next) => {
         let pursueNotificationProcess = false;
         let notification = request.body['m2m:sgn']['m2m:nev']['m2m:rep'];
         let loggedUser = loginsArray.find(element => element.logged == true);
-        for(let ae of loggedUser.aeArray){
-            for(let container of ae.containersArray){
-                if(container.containerId === notification['m2m:cin'].pi.split('/mn-cse/')[1]){
-                    pursueNotificationProcess = true;
+        if(loggedUser && loggedUser.hasOwnProperty('aeArray')){
+            for(let ae of loggedUser.aeArray){
+                for(let container of ae.containersArray){
+                    if(container.containerId === notification['m2m:cin'].pi.split('/mn-cse/')[1]){
+                        pursueNotificationProcess = true;
+                    }
                 }
             }
-        }
-        if(pursueNotificationProcess){
-            //we send the new data received onto the gateway node to the web client
-            push.sendNotification(subscriptions[0].push, JSON.stringify(request.body['m2m:sgn']['m2m:nev']['m2m:rep']['m2m:cin']));
+            if(pursueNotificationProcess){
+                //we send the new data received onto the gateway node to the web client
+                push.sendNotification(subscriptions[0].push, JSON.stringify(request.body['m2m:sgn']['m2m:nev']['m2m:rep']['m2m:cin']));
+            }
         }
    }
 };
