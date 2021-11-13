@@ -7,8 +7,8 @@ Here we will focus on the the Infrastructure Node part. To be more precised, the
 			AND 
 		- a Node JS server to handle subscription and send notifications to the user web app as well as the login/logout part of the user web app
 
-This repository is the code for this Node JS server.
-The goal of this Node JS server is to forward patients'datas (acceleration and temperature) from the gateway to the web application that is running on the Chrome navigator
+More specifically, this repository is the code for this Node JS server.
+The goal of this Node JS server is to forward patients'datas (acceleration and temperature) from the gateway (raspberry) to the web application that is running on the Chrome navigator
 Thus we can consider this Node JS server as an interface between our Middle Node (raspberry pi 3) and our user web application. Everytime the Middle Node receives data
 from the sensors, the Middle Node sends this data to our Node JS Server. The Node JS server then sends a notification (that contains data) to the user web app.
 
@@ -33,5 +33,5 @@ Project configuration :
 ------------------------------------------------------------------------------
 
 Project launch :
-- on a terminal, under "hackathon-backend" directory, run the following line command : "nodemon server.js" or "node server.js"
-- normally on your terminal, you should see "listening on port 3000"
+- open a terminal, go under "hackathon-backend" directory using "cd" command, and run one of the following line command : "nodemon server.js" or "node server.js"
+- you should see on that same terminal the following message :  "listening on port 3000"
